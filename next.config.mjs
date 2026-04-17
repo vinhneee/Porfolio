@@ -8,6 +8,7 @@ const nextConfig = {
       },
     ],
   },
+  transpilePackages: ['three', 'gsap', 'lenis', 'meshline', '@react-three/fiber', '@react-three/drei', '@react-three/rapier'],
 };
 
 export default nextConfig;
