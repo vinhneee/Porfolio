@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
 import Image from 'next/image';
 import styles from './CardSection.module.css';
 import './global.css';
@@ -19,7 +18,8 @@ const CardSection: React.FC = () => {
     let cleanup: (() => void) | undefined;
 
     (async () => {
-      const [{ default: ScrollTrigger }, { default: Lenis }] = await Promise.all([
+      const [{ default: gsap }, { default: ScrollTrigger }, { default: Lenis }] = await Promise.all([
+        import('gsap'),
         import('gsap/ScrollTrigger'),
         import('lenis'),
       ]);

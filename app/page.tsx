@@ -1,12 +1,14 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import { Footer } from "@/components/footer";
 import { Grid } from "@/components/grid";
 import { FloatingNav } from "@/components/ui/floating-nav";
 import { RecentProjects } from "@/components/recent-projects";
 import { navItems } from "@/data";
-import App from '@/components/band/App';
-import CardSection from "@/components/card/CardSection";
+
+const App = dynamic(() => import('@/components/band/App'), { ssr: false });
+const CardSection = dynamic(() => import('@/components/card/CardSection'), { ssr: false });
 
 
 const MainPage = () => {
