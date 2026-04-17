@@ -16,9 +16,11 @@ const TEXTURE_PATH = '/assets/band.png';
 const IMAGE_PATH = '/assets/port.png';
 const VINHDAO_PATH = '/images/vinhdao.jpg';
 
-useGLTF.preload(GLTF_PATH);
-useTexture.preload(TEXTURE_PATH);
-useTexture.preload(VINHDAO_PATH);
+if (typeof window !== 'undefined') {
+  useGLTF.preload(GLTF_PATH);
+  useTexture.preload(TEXTURE_PATH);
+  useTexture.preload(VINHDAO_PATH);
+}
 
 export default function App() {
   return (

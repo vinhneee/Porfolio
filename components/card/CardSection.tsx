@@ -1,11 +1,9 @@
-"use client"; // Wajib untuk menggunakan useEffect
+"use client";
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
-import Lenis from 'lenis';
-import Image from 'next/image'; // Gunakan <Image /> untuk optimasi gambar
-import styles from './CardSection.module.css'; // Impor CSS Module
-import './global.css'; // Impor CSS global
+import Image from 'next/image';
+import styles from './CardSection.module.css';
+import './global.css';
 
 // Data untuk marquee items
 const marqueeItems = [
@@ -18,11 +16,16 @@ const CardSection: React.FC = () => {
   const cardsRef = useRef<HTMLDivElement[]>([]);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      // Inisialisasi GSAP dan ScrollTrigger
+    let cleanup: (() => void) | undefined;
+
+    (async () => {
+      const [{ default: ScrollTrigger }, { default: Lenis }] = await Promise.all([
+        import('gsap/ScrollTrigger'),
+        import('lenis'),
+      ]);
+
       gsap.registerPlugin(ScrollTrigger);
 
-      // Smooth scroll dengan Lenis
       const lenis = new Lenis();
       lenis.on('scroll', ScrollTrigger.update);
       gsap.ticker.add((time: number) => {
@@ -35,7 +38,6 @@ const CardSection: React.FC = () => {
       const positions = [14, 38, 62, 86];
       const rotations = [-15, -7.5, 7.5, 15];
 
-      // Pin cards section
       ScrollTrigger.create({
         trigger: `.${styles.cards}`,
         start: 'top top',
@@ -44,7 +46,6 @@ const CardSection: React.FC = () => {
         pinSpacing: true,
       });
 
-      // Spread cards
       cards.forEach((card, index) => {
         gsap.to(card, {
           left: `${positions[index]}%`,
@@ -60,7 +61,6 @@ const CardSection: React.FC = () => {
         });
       });
 
-      // Rotate and flip cards with staggered effect
       cards.forEach((card, index) => {
         const frontEl = card.querySelector(`.${styles.flipCardFront}`) as HTMLElement;
         const backEl = card.querySelector(`.${styles.flipCardBack}`) as HTMLElement;
@@ -92,12 +92,11 @@ const CardSection: React.FC = () => {
           },
         });
       });
-    }
 
-    // Cleanup
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
+      cleanup = () => ScrollTrigger.getAll().forEach((t) => t.kill());
+    })();
+
+    return () => cleanup?.();
   }, []);
 
   // Fungsi untuk menghasilkan marquee items secara dinamis
