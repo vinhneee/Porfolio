@@ -1,6 +1,4 @@
 
-![prev-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/0a0ff7b7-ca8d-435f-8d60-d33c736354d5)
-
 ## ✨ Tính năng
 
 * ⚡ Xây dựng với **Next.js (App Router)**
