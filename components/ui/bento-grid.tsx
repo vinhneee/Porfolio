@@ -1,9 +1,11 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { IoCopyOutline } from "react-icons/io5";
-import Lottie from "react-lottie";
+
+const Lottie = dynamic(() => import("react-lottie"), { ssr: false });
 
 import { companies } from "@/data";
 import { socialMedia } from "@/data";
