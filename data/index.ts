@@ -40,7 +40,7 @@ export const projects = [
     id: 1,
     title: "Fishto - Game Blockchain",
     des: "Game câu cá cho phép người dùng mua bán và trao đổi vật phẩm kỹ thuật số..",
-    img: "/tanyaai.png",
+    img: "/Fisto.png",
     iconLists: ["/unity.svg","/claude.svg"],
     link: "",
     sourceCode: "",
