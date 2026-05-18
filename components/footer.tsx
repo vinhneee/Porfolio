@@ -29,7 +29,7 @@ export const Footer = () => {
 
         <p className="my-5 text-center text-white-200 md:mt-10">
           Hãy liên hệ với em ngay hôm nay để cùng thảo luận về cách em có thể
-          giúp bạn đạt được mục tiêu.
+          giúp doanh nghiệp đạt được mục tiêu.
         </p>
 
         <Link

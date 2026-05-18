@@ -42,8 +42,8 @@ export const projects = [
     des: "Game câu cá cho phép người dùng mua bán và trao đổi vật phẩm kỹ thuật số..",
     img: "/Fisto.png",
     iconLists: ["/unity.svg","/claude.svg"],
-    link: "",
-    sourceCode: "",
+    link: "https://vinhneee.github.io/Fishto/",
+    sourceCode: "https://github.com/vinhneee/FishV2",
   },
   {
     id: 2,
