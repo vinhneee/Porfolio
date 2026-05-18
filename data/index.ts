@@ -60,7 +60,7 @@ export const projects = [
     des: "Đây là một bài báo cáo bằng PowerBi dựa trên các dữ liệu khách hàng của GearVn",
     img: "/Báo cáo.png",
     iconLists: ["/powerbi.svg","/photoshop.svg"],
-    link: "https://docs.google.com/presentation/d/1KyURHHaR3_AR0tO8fSYPHxLez0CPFH5o/edit?usp=drive_link&ouid=101865716563151178207&rtpof=true&sd=true",
+    link: "https://drive.google.com/drive/my-drive?hl=vi",
     sourceCode: "https://docs.google.com/presentation/d/1KyURHHaR3_AR0tO8fSYPHxLez0CPFH5o/edit?usp=drive_link&ouid=101865716563151178207&rtpof=true&sd=true",
   },
   {

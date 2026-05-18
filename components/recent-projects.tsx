@@ -21,7 +21,7 @@ export const RecentProjects = () => {
               key={id}
               className="flex h-[32rem] w-[90vw] items-center justify-center sm:h-[41rem] sm:w-[570px] lg:min-h-[32.5rem]"
             >
-              <PinContainer title="Bấm vào đây để xem trang web" href={link}>
+              <PinContainer title="Bấm vào đây để xem dự án" href={link}>
                 <div className="relative mb-10 flex h-[20vh] w-[80vw] items-center justify-center overflow-hidden sm:h-[35vh] sm:w-[570px]">
                   <div className="relative h-full w-full overflow-hidden bg-[#13162d] lg:rounded-3xl">
                     <Image
